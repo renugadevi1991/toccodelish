@@ -35,7 +35,8 @@ app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 app.use('/api/menu', menu);
 
-const port = process.env.PORT || 5000;
+//const port = process.env.PORT || 5000;
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
